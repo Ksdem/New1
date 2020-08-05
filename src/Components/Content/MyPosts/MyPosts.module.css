@@ -1,0 +1,17 @@
+
+.post {
+    font-weight: 700;
+    font-stretch: ultra-expanded;
+
+}
+
+.content img {
+    font-style: unset;
+    width: 500px;
+}
+
+
+.active {
+    font-size: medium;
+    font-style: oblique;
+}
