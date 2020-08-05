@@ -1,0 +1,18 @@
+.nav {
+    font-weight:900;
+
+    grid-area: n;
+    background-color: aqua;
+}
+.friends{
+    color: deeppink;
+    font-family: "Bodoni MT", serif;
+}
+.item{
+    color:darkmagenta;
+}
+.active{
+    color: blue;
+    font-stretch: extra-condensed;
+
+}
