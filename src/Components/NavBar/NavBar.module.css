@@ -1,18 +1,44 @@
 .nav {
-    font-weight:900;
+    font-weight: 900;
 
     grid-area: n;
     background-color: aqua;
 }
-.friends{
+
+.friends {
     color: deeppink;
     font-family: "Bodoni MT", serif;
 }
-.item{
-    color:darkmagenta;
+
+.item {
+    color: darkmagenta;
 }
-.active{
+
+.active {
     color: blue;
     font-stretch: extra-condensed;
 
 }
+
+.gridContainer {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr;
+    gap: 1px 1px;
+    grid-template-areas: "dsrrrdrgr grdgd grdr";
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+

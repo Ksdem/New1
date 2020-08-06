@@ -4,7 +4,7 @@ import MyPosts from "./MyPosts/MyPosts";
 
 const Content = () => {
     return (
-        <div className={f.content}>
+        <div>
             <div>
                 <img src='https://internationalwealth.info/wp-content/uploads/2019/03/Seychel-bank.jpg'/>
             </div>
