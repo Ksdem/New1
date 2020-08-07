@@ -1,0 +1,15 @@
+
+
+.item {
+    color: blue;
+}
+.dialogsItems{
+    color: deeppink;
+}
+.item img{
+    width: 120px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid deeppink;
+    padding: 5px;
+}

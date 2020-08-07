@@ -3,6 +3,7 @@
 
     grid-area: n;
     background-color: aqua;
+    text-decoration: none;
 }
 
 .friends {
@@ -12,12 +13,12 @@
 
 .item {
     color: darkmagenta;
+    text-decoration: none;
 }
 
 .active {
     color: blue;
     font-stretch: extra-condensed;
-
 }
 
 .gridContainer {
@@ -40,5 +41,8 @@
 .three {
     grid-area: three;
 }
-
+.item a.activeLink{
+    color: orchid;
+    text-decoration: none;
+}
 
