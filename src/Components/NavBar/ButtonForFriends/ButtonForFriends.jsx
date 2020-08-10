@@ -7,7 +7,7 @@ const ButtonForFriends = (props) => {
 
         <div>
             <button className={`${f.button} ${f.button_hover}`}>
-                <NavLink to={props.href ? props.href : ''}>
+                <NavLink className={f.button} activeClassName={f.activeLink} to={props.to ? props.to : ''}>
                 {props.name}
             </NavLink>
             </button>

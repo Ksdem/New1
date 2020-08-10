@@ -10,6 +10,7 @@ import News from "./Components/NavBar/News/News";
 import Settings from "./Components/NavBar/Settings/Settings";
 import Messages from "./Components/Dialogs/Messages/Messages";
 import DialogsItems from "./Components/Dialogs/DialogsItems/DialogsItems";
+import ButtonForFriends from "./Components/NavBar/ButtonForFriends/ButtonForFriends";
 
 
 const App = (props) => {
@@ -25,6 +26,7 @@ const App = (props) => {
                     <Route  path='/news' component={News}/>
                     <Route  path='/settings' component={Settings}/>
                     <Route  path='/messages/dialogItems' component={Messages}/>
+                      {/*<Route  path='/Hare' component={ButtonForFriends}/>*/}
 
                 </div>
             </div>

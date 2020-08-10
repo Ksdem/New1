@@ -4,14 +4,13 @@ import {NavLink} from "react-router-dom";
 
 const Messages = (props) => {
     return (
-        <div className={f.messages}>
-            <div>
+        <div>
+            <div className={f.item}>
 
-                {props.messag}
+                {props.message}
             </div>
         </div>
     );
-
 
 }
 export default Messages;
