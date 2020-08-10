@@ -2,14 +2,24 @@
 
 .item {
     color: blue;
+    margin: 5px;
+    padding: 5px;
+    flex: 0 1 auto;
 }
-.dialogsItems{
-    color: deeppink;
-}
+
 .item img{
-    width: 120px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     border: 2px solid deeppink;
     padding: 5px;
+}
+
+
+.item a{
+    text-decoration: none;
+}
+.item a.activeLink{
+    color:cornflowerblue;
+    text-decoration: none;
 }

@@ -4,18 +4,15 @@ import {NavLink} from "react-router-dom";
 
 const DialogsItems = (props) => {
     return (
-
-        <div className={f.dialogsItems}>
             <div className={f.item}>
 
-                <img src={props.ava} alt={'asd'} />
-                {/*{props.ava}*/}
 
-                <NavLink strict to={`/messages/${props.id}`}>
+
+                <NavLink className={f.item} activeClassName={f.activeLink} strict to={`/messages/${props.id}`} >
+                    <img src={props.ava} alt={'asd'} />
                     {props.id}
                 </NavLink>
             </div>
-        </div>
     );
 
 

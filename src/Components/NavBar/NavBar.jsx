@@ -23,9 +23,9 @@ const NavBar = () => {
                     <NavLink className={f.item} to='/settings' activeClassName={f.activeLink}>Settings</NavLink>
                 </div>
                 <div className={f.gridContainer}>
-                    <Button name='Hare' className={f.one}/>
-                    <Button name='Cat' className={f.two}/>
-                    <Button name='Fox' className={f.three}/>
+                    <Button name='Hare' className={f.one} to={'/messages/Hare'}/>
+                    <Button name='Cat' className={f.two} to={'/messages/Cat'}/>
+                    <Button name='Fox' className={f.three} to={'/messages/Fox'}/>
                 </div>
             </div>
         </nav>
