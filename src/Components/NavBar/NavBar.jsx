@@ -24,7 +24,7 @@ const NavBar = () => {
                 </div>
                 <div className={f.gridContainer}>
                     <Button name='Hare' className={f.one} to={'/messages/Hare'}/>
-                    <Button name='Cat' className={f.two} to={'/messages/Cat'}/>
+                    <Button name='Wolf' className={f.two} to={'/messages/Wolf'}/>
                     <Button name='Fox' className={f.three} to={'/messages/Fox'}/>
                 </div>
             </div>
