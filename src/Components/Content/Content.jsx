@@ -1,18 +1,15 @@
 import React from "react";
 import f from './Content.module.css';
 import MyPosts from "./MyPosts/MyPosts";
+import ContentInfo from "./MyPosts/ContentInfo/ContentInfo";
 
-const Content = () => {
+
+const Content = (props) => {
     return (
         <div>
-            <div>
-                <img src='https://internationalwealth.info/wp-content/uploads/2019/03/Seychel-bank.jpg'/>
-            </div>
-            <div className={`${f.post} ${f.active}`}>
-                ava+description
-            </div>
-            <MyPosts/>
-            <div/>
+            <ContentInfo/>
+            <MyPosts posts={props.state.posts} addPost={props.addPost}/>
+
         </div>
     );
 }

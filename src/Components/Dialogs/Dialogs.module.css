@@ -1,22 +1,15 @@
 .dialogs {
     display: flex;
     flex-flow: column nowrap;
+
 }
 .dialogsContainer {
     display: flex;
     flex-flow: row nowrap;
 }
-
-/*.dialogs{*/
-/*    display: grid;*/
-/*    height: max-content;*/
-/*    padding:20px;*/
-
-/*    grid-template-columns:2fr 2fr;*/
-/*    grid-gap: 10px;*/
-/*    border: deeppink;*/
-/*    color: orchid;*/
-/*}*/
+.newFlex{
+    align-self: flex-end;
+}
 .item {
     color: blue;
 }
@@ -25,7 +18,6 @@
 }
 
 .messages{
-    color:deepskyblue;
+    color:cornflowerblue;
     font-style: italic;
-    flex: 1 1 auto;
 }
