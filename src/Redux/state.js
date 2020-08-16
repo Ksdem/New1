@@ -1,5 +1,14 @@
 import React from 'react';
-import {rerenderEntireTree} from "../render";
+
+
+
+
+
+
+
+let rerenderEntireTree=()=>{
+    console.log('State   changed')
+}
 
 let state =  {
     profile: {
@@ -7,7 +16,8 @@ let state =  {
             {message: 'Hi', likesCount: '1'},
             {message: 'Hello', likesCount: '5'}
 
-        ]
+        ],
+        newPostText:'Dem'
     },
     data: {
         animalsData: [
@@ -37,17 +47,27 @@ let state =  {
 
 }
 
- export let addPost=(postMessage)=>{
+ export let addPost=()=>{
     let newPost={
-        message:postMessage,
+        message:state.profile.newPostText,
         likesCount:5
     }
     state.profile.posts.push(newPost);
+     state.profile.newPostText='';
     rerenderEntireTree(state);
+}
+export let updateNewPostText=(newText)=>{
+
+    state.profile.newPostText=newText;
+    rerenderEntireTree();
+
+}
+export  const  subscribe=(observer)=>{
+    rerenderEntireTree=observer;
 }
 
 
 
 
-
 export default state;
+
