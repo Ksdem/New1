@@ -4,70 +4,79 @@ import React from 'react';
 
 
 
+let store={
 
+    _state: {
+        profile: {
+            posts: [
+                {message: 'Hi', likesCount: '1'},
+                {message: 'Hello', likesCount: '5'}
 
-let rerenderEntireTree=()=>{
-    console.log('State   changed')
-}
+            ],
+            newPostText:'Dem'
+        },
+        data: {
+            animalsData: [
+                {id: 'Fox',
+                    ava: 'https://image.shutterstock.com/image-photo/national-park-cotopaxi-ecuador-wildlife-260nw-1669461565.jpg'
+                },
+                {id: 'Hare',
+                    ava: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiPZDsRVv9f9x8HXQfQZz4Aq-XH4ApmVkXKpLvaFSI1aQ3X1A-pT7jS6vw0yAMGipbayuQYp_Qu0P3ELNYATyjgQ&usqp=CAU&ec=45688577'
+                },
+                {id: 'Squirrel', ava: 'https://simple-fauna.ru/wp-content/uploads/2017/10/obyknovennaya-belka.jpg'},
+                {id: 'Hedgehog',
+                    ava: 'https://cdn.iz.ru/sites/default/files/styles/900x506/public/news-2019-09/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202019-09-18%20%D0%B2%200.54.49.jpg?itok=KGrumvl6'
+                },
+                {id: 'Bear',
+                    ava: 'https://img.gazeta.ru/files3/823/12342823/Depositphotos_65052241_l-2015-pic905-895x505-35231.jpg'
+                },
+                {id: 'Wolf', ava: 'https://cs13.pikabu.ru/post_img/big/2019/02/03/4/1549167685160735519.jpg'}
 
-let state =  {
-    profile: {
-        posts: [
-            {message: 'Hi', likesCount: '1'},
-            {message: 'Hello', likesCount: '5'}
+            ],
+            messagesData: [
+                {message: 'Hi'},
+                {message: 'You'},
+                {message: 'I'}
+            ]
 
-        ],
-        newPostText:'Dem'
+        }
+
     },
-    data: {
-        animalsData: [
-            {id: 'Fox',
-                ava: 'https://image.shutterstock.com/image-photo/national-park-cotopaxi-ecuador-wildlife-260nw-1669461565.jpg'
-            },
-            {id: 'Hare',
-                ava: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiPZDsRVv9f9x8HXQfQZz4Aq-XH4ApmVkXKpLvaFSI1aQ3X1A-pT7jS6vw0yAMGipbayuQYp_Qu0P3ELNYATyjgQ&usqp=CAU&ec=45688577'
-            },
-            {id: 'Squirrel', ava: 'https://simple-fauna.ru/wp-content/uploads/2017/10/obyknovennaya-belka.jpg'},
-            {id: 'Hedgehog',
-                ava: 'https://cdn.iz.ru/sites/default/files/styles/900x506/public/news-2019-09/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202019-09-18%20%D0%B2%200.54.49.jpg?itok=KGrumvl6'
-            },
-            {id: 'Bear',
-                ava: 'https://img.gazeta.ru/files3/823/12342823/Depositphotos_65052241_l-2015-pic905-895x505-35231.jpg'
-            },
-            {id: 'Wolf', ava: 'https://cs13.pikabu.ru/post_img/big/2019/02/03/4/1549167685160735519.jpg'}
+    getState(){
 
-        ],
-        messagesData: [
-            {message: 'Hi'},
-            {message: 'You'},
-            {message: 'I'}
-        ]
+        return this._state
+    },
+    rerenderEntireTree(){
+        console.log('State   changed')
+    },
+    addPost(){
+debugger;
+        let newPost={
+            message:this._state.profile.newPostText,
+            likesCount:0
+        }
+        this._state.profile.posts.push(newPost);
+        this._state.profile.newPostText='';
+        this.rerenderEntireTree( this._state);
+    },
+    updateNewPostText(newText){
+        console.log('updateNewPostText',this._state)
+        this._state.profile.newPostText=newText;
+        this.rerenderEntireTree(this._state);
 
+    },
+    subscribe(observer){
+        this.rerenderEntireTree=observer;
     }
-
-}
-
- export let addPost=()=>{
-    let newPost={
-        message:state.profile.newPostText,
-        likesCount:5
-    }
-    state.profile.posts.push(newPost);
-     state.profile.newPostText='';
-    rerenderEntireTree(state);
-}
-export let updateNewPostText=(newText)=>{
-
-    state.profile.newPostText=newText;
-    rerenderEntireTree();
-
-}
-export  const  subscribe=(observer)=>{
-    rerenderEntireTree=observer;
 }
 
 
 
 
-export default state;
+
+
+
+window.store=store;
+
+export default store;
 

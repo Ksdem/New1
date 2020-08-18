@@ -13,6 +13,8 @@ import {addPost} from "./Redux/state";
 
 
 const App = (props) => {
+    console.log('props',props)
+    console.log('props.state.profile',props.state.profile)
     return (
         <BrowserRouter>
             <div className='app-wrapper '>
