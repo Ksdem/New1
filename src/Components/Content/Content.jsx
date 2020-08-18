@@ -5,6 +5,7 @@ import ContentInfo from "./MyPosts/ContentInfo/ContentInfo";
 
 
 const Content = (props) => {
+    debugger
     return (
         <div>
             <ContentInfo/>
