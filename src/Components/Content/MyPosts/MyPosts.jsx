@@ -1,23 +1,26 @@
 import React from "react";
 import f from './MyPosts.module.css'
 import Post from "./Post/Post";
-import DialogsItems from "../../Dialogs/DialogsItems/DialogsItems";
+
 
 const MyPosts = (props) => {
 
 
-    let postElements = props.posts.map((m, i) => <Post key={i} message={m.message} likesCount={m.likesCount}/>)
+    let postElements = props.posts.map((m, i) =>
+        <Post key={i} message={m.message} likesCount={m.likesCount}/>)
 
 
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        props.addPost();
+        props.dispatch({type:'ADD-POST'});
 
     }
     let onPostChange = () => {
+
         let text = newPostElement.current.value;
-        props.updateNewPostText(text);
+        let action = {type: 'UPDATE-NEW-POST-TEXT', newText:text};
+        props.dispatch(action);
     }
     return (
 

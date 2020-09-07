@@ -11,8 +11,7 @@ const Content = (props) => {
             <ContentInfo/>
             <MyPosts posts={props.profile.posts}
                      newPostText={props.profile.newPostText}
-                     updateNewPostText={props.updateNewPostText}
-                     addPost={props.addPost} />
+                     dispatch={props. dispatch}/>
 
         </div>
     );
