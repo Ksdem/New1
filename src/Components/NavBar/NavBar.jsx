@@ -1,6 +1,6 @@
 import React from "react";
 import f from './NavBar.module.css';
-import Button from "./ButtonForFriends/ButtonForFriends";
+import ButtonForFriends  from "./ButtonForFriends/ButtonForFriends";
 import {NavLink} from "react-router-dom";
 
 const NavBar = () => {
@@ -23,9 +23,9 @@ const NavBar = () => {
                     <NavLink className={f.item} to='/settings' activeClassName={f.activeLink}>Settings</NavLink>
                 </div>
                 <div className={f.gridContainer}>
-                    <Button name='Hare' className={f.one} to={'/messages/Hare'}/>
-                    <Button name='Wolf' className={f.two} to={'/messages/Wolf'}/>
-                    <Button name='Fox' className={f.three} to={'/messages/Fox'}/>
+                    <ButtonForFriends  name='Hare' className={f.one} to={'/messages/Hare'}/>
+                    <ButtonForFriends  name='Wolf' className={f.two} to={'/messages/Wolf'}/>
+                    <ButtonForFriends  name='Fox' className={f.three} to={'/messages/Fox'}/>
                 </div>
             </div>
         </nav>
