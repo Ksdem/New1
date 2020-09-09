@@ -3,10 +3,10 @@ import f from './Dialogs.module.css'
 import DialogsItems from "./DialogsItems/DialogsItems"
 import Messages from "./Messages/Messages";
 import Post from "../Content/MyPosts/Post/Post";
-import {sendMessageCreator, updateNewMessageBodyCreator, updateNewPostTextActionCreator} from "../../Redux/state";
+import {sendMessageCreator, updateNewMessageBodyCreator} from "../../Redux/data-reducer";
 
 const Dialogs = (props) => {
-    let state=props.store.getState().data;
+    let state = props.store.getState().data;
 
 
     let AnimalsElements = state.animalsData
@@ -15,17 +15,16 @@ const Dialogs = (props) => {
     let MessagesElements = state.messagesData
         .map((m, i) =>
             <Messages key={i} message={m.message}/>);
-    let newMessageBody=state.newMessageBody;
+    let newMessageBody = state.newMessageBody;
 
 
-
-    let onNewMessageChange=(e)=>{
-let body=e.target.value;
-props.store.dispatch(updateNewMessageBodyCreator(body));
-}
+    let onNewMessageChange = (e) => {
+        let body = e.target.value;
+        props.store.dispatch(updateNewMessageBodyCreator(body));
+    }
 
     let onSendMessageClick = () => {
-        props.store.dispatch( sendMessageCreator());
+        props.store.dispatch(sendMessageCreator());
     }
     return (
         <div className={f.dialogsContainer}>
@@ -38,7 +37,7 @@ props.store.dispatch(updateNewMessageBodyCreator(body));
                 {MessagesElements}
             </div>
             <div className={`${f.newFlex} ${f.messages}`}>
-                <div >
+                <div>
                     <textarea onChange={onNewMessageChange}
                               value={newMessageBody}/>
                 </div>

@@ -9,7 +9,7 @@ import Music from "./Components/NavBar/Music/Music";
 import News from "./Components/NavBar/News/News";
 import Settings from "./Components/NavBar/Settings/Settings";
 import Messages from "./Components/Dialogs/Messages/Messages";
-import {addPost} from "./Redux/state";
+import {addPost} from "./Redux/store";
 
 
 const App = (props) => {
