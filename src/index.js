@@ -10,7 +10,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 
-let rerenderEntireTree = () => {
+let rerenderEntireTree = (state) => {
     ReactDOM.render(
         <React.StrictMode>
             <App state={store.getState()}

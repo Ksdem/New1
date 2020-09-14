@@ -3,13 +3,12 @@ import './App.css';
 import Header from "./Components/Header/Header";
 import NavBar from "./Components/NavBar/NavBar";
 import Content from "./Components/Content/Content";
-import Dialogs from "./Components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
 import Music from "./Components/NavBar/Music/Music";
 import News from "./Components/NavBar/News/News";
 import Settings from "./Components/NavBar/Settings/Settings";
 import Messages from "./Components/Dialogs/Messages/Messages";
-import {addPost} from "./Redux/store";
+import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 
 
 const App = (props) => {
@@ -22,10 +21,9 @@ const App = (props) => {
                 <NavBar/>
                 <div className='app-wrapper-content'>
                     <Route path='/messages' render={() =>
-                        <Dialogs  store={props.store}/>}/>
+                        <DialogsContainer  store={props.store}/>}/>
                     <Route path='/profile' render={() =>
-                        <Content profile={props.state.profile}
-                                 dispatch={props.dispatch}/>}/>
+                        <Content profile store={props.store}/>}/>
                     <Route path='/music' render={Music}/>
                     <Route path='/news' render={News}/>
                     <Route path='/settings' render={Settings}/>

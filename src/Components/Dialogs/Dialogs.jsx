@@ -2,11 +2,10 @@ import React from "react";
 import f from './Dialogs.module.css'
 import DialogsItems from "./DialogsItems/DialogsItems"
 import Messages from "./Messages/Messages";
-import Post from "../Content/MyPosts/Post/Post";
 import {sendMessageCreator, updateNewMessageBodyCreator} from "../../Redux/data-reducer";
 
 const Dialogs = (props) => {
-    let state = props.store.getState().data;
+    let state = props.data;
 
 
     let AnimalsElements = state.animalsData
@@ -20,11 +19,11 @@ const Dialogs = (props) => {
 
     let onNewMessageChange = (e) => {
         let body = e.target.value;
-        props.store.dispatch(updateNewMessageBodyCreator(body));
+        props.updateNewMessageBody(body);
     }
 
     let onSendMessageClick = () => {
-        props.store.dispatch(sendMessageCreator());
+        props.sendMessageClick();
     }
     return (
         <div className={f.dialogsContainer}>
