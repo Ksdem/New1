@@ -12,8 +12,6 @@ import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 
 
 const App = (props) => {
-    console.log('props', props)
-    console.log('props.state.profile', props.state.profile)
     return (
         <BrowserRouter>
             <div className='app-wrapper '>
@@ -21,9 +19,9 @@ const App = (props) => {
                 <NavBar/>
                 <div className='app-wrapper-content'>
                     <Route path='/messages' render={() =>
-                        <DialogsContainer  store={props.store}/>}/>
+                        <DialogsContainer/>}/>
                     <Route path='/profile' render={() =>
-                        <Content profile store={props.store}/>}/>
+                        <Content/>}/>
                     <Route path='/music' render={Music}/>
                     <Route path='/news' render={News}/>
                     <Route path='/settings' render={Settings}/>
