@@ -25,6 +25,9 @@ const Dialogs = (props) => {
     let onSendMessageClick = () => {
         props.sendMessageClick();
     }
+    let onUsers = () => {
+        ;
+    }
     return (
         <div className={f.dialogsContainer}>
             <div className={f.dialogs}>
@@ -42,6 +45,7 @@ const Dialogs = (props) => {
                 </div>
                 <div>
                     <button onClick={onSendMessageClick}>Send</button>
+                    <button onClick={onUsers}>go</button>
                 </div>
             </div>
         </div>
