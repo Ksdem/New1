@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from "./Components/Header/Header";
 import NavBar from "./Components/NavBar/NavBar";
-import Content from "./Components/Content/Content";
+import Content from "./Components/Content/Profile";
 import {BrowserRouter, Route} from "react-router-dom";
 import Music from "./Components/NavBar/Music/Music";
 import News from "./Components/NavBar/News/News";
@@ -10,6 +10,7 @@ import Settings from "./Components/NavBar/Settings/Settings";
 import Messages from "./Components/Dialogs/Messages/Messages";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 import UsersContainer from "./Components/Users/UsersContainer";
+import ProfileContainer from "./Components/Content/ProfileContainer";
 
 
 
@@ -22,10 +23,9 @@ const App = (props) => {
                 <div className='app-wrapper-content'>
                     <Route path='/messages' render={() =>
                         <DialogsContainer/>}/>
-                    <Route path='/profile' render={() =>
-                        <Content/>}/>
+                    <Route path='/profile/:userId?' render={() =>
+                        <ProfileContainer/>}/>
                     <Route path='/users' render={() =>
-                        // <div>123</div>
                         <UsersContainer/>
                     }/>
 
