@@ -11,6 +11,7 @@ import Messages from "./Components/Dialogs/Messages/Messages";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 import UsersContainer from "./Components/Users/UsersContainer";
 import ProfileContainer from "./Components/Content/ProfileContainer";
+import HeaderContainer from "./Components/Header/HeaderContainer";
 
 
 
@@ -18,7 +19,7 @@ const App = (props) => {
     return (
         <BrowserRouter>
             <div className='app-wrapper '>
-                <Header/>
+                <HeaderContainer/>
                 <NavBar/>
                 <div className='app-wrapper-content'>
                     <Route path='/messages' render={() =>

@@ -2,13 +2,15 @@ import {combineReducers, createStore} from "redux";
 import profileReducer from "./profile-reducer";
 import dataReducer from "./data-reducer";
 import usersReducer from "./users-reducer";
+import authReducer from "./auth-reducer";
 
 
 
 let reducers=combineReducers({
     profile:profileReducer,
     data: dataReducer,
-    usersPage:usersReducer
+    usersPage:usersReducer,
+    auth:authReducer
 });
 
 
