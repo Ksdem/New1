@@ -15,7 +15,6 @@ import HeaderContainer from "./Components/Header/HeaderContainer";
 import LoginPage from "./Components/Login/Login";
 
 
-
 const App = (props) => {
     return (
         <BrowserRouter>
@@ -29,12 +28,12 @@ const App = (props) => {
                         <ProfileContainer/>}/>
                     <Route path='/users' render={() =>
                         <UsersContainer/>}/>
-                        <Route path='/login' render={() =>
+                    <Route path='/login' render={() =>
                         <LoginPage/>
                     }/>
 
 
-                     <Route path='/music' render={Music}/>
+                    <Route path='/music' render={Music}/>
                     <Route path='/news' render={News}/>
                     <Route path='/settings' render={Settings}/>
                     <Route path='/messages/dialogItems' render={Messages}/>
