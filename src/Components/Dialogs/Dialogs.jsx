@@ -2,7 +2,7 @@ import React from "react";
 import f from './Dialogs.module.css'
 import DialogsItems from "./DialogsItems/DialogsItems"
 import Messages from "./Messages/Messages";
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../Redux/data-reducer";
+import {Redirect} from 'react-router-dom';
 
 const Dialogs = (props) => {
     let state = props.data;
@@ -28,6 +28,11 @@ const Dialogs = (props) => {
     let onUsers = () => {
         ;
     }
+
+   if(!props.isAuth) return <Redirect to={'/login'}/>;
+
+
+
     return (
         <div className={f.dialogsContainer}>
             <div className={f.dialogs}>
