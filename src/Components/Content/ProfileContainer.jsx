@@ -38,7 +38,13 @@ export default compose(
     connect(mapStateToProps, {getUsersProfile}),
     withRouter,
     withAuthRedirect
+)(ProfileContainer)
 
-)(ProfileContainer);
+
+
+
+
+
+
 
 
