@@ -2,7 +2,7 @@ import React from "react";
 import f from './Dialogs.module.css'
 import DialogsItems from "./DialogsItems/DialogsItems"
 import Messages from "./Messages/Messages";
-import {Redirect} from 'react-router-dom';
+import {Field, reduxForm} from "redux-form";
 
 const Dialogs = (props) => {
     let state = props.data;
@@ -14,22 +14,11 @@ const Dialogs = (props) => {
     let MessagesElements = state.messagesData
         .map((m, i) =>
             <Messages key={i} message={m.message}/>);
-    let newMessageBody = state.newMessageBody;
 
 
-    let onNewMessageChange = (e) => {
-        let body = e.target.value;
-        props.updateNewMessageBody(body);
+    let addNewMessage = (values) => {
+        props.sendMessageClick(values.newMessageBody);
     }
-
-    let onSendMessageClick = () => {
-        props.sendMessageClick();
-    }
-    let onUsers = () => {
-        ;
-    }
-
-
     return (
         <div className={f.dialogsContainer}>
             <div className={f.dialogs}>
@@ -41,16 +30,25 @@ const Dialogs = (props) => {
                 {MessagesElements}
             </div>
             <div className={`${f.newFlex} ${f.messages}`}>
-                <div>
-                    <textarea onChange={onNewMessageChange}
-                              value={newMessageBody}/>
-                </div>
-                <div>
-                    <button onClick={onSendMessageClick}>Send</button>
-                    <button onClick={onUsers}>go</button>
-                </div>
+                <AddMessageFormRedux onSubmit={addNewMessage}/>
             </div>
         </div>
     );
 }
+const AddMessageForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <div>
+                <Field component='textarea' name='newMessageBody' placeholder='Enter your message'/>
+
+            </div>
+            <div>
+                <button>Send</button>
+                <button>go</button>
+            </div>
+        </form>
+    )
+}
+const AddMessageFormRedux = reduxForm({form: 'dialogAddMessageForm'})(AddMessageForm);
+
 export default Dialogs;
